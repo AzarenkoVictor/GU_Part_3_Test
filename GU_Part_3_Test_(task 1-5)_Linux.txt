@@ -1,0 +1,180 @@
+1)
+victor@Victor-PC-Ubuntu:~/GB$ cat > 'Домашние животные'
+собаки
+кошки
+хомяки
+victor@Victor-PC-Ubuntu:~/GB$ cat > 'Вьючные животные'
+Лошади
+верблюды 
+ослы
+victor@Victor-PC-Ubuntu:~/GB$ cat 'Домашние животные' 'Вьючные животные' > 'Животные'
+victor@Victor-PC-Ubuntu:~/GB$ cat 'Животные'
+собаки
+кошки
+хомяки
+Лошади
+верблюды
+ослы
+victor@Victor-PC-Ubuntu:~/GB$ mv 'Животные' 'Друзья человека'
+
+2)
+victor@Victor-PC-Ubuntu:~/GB$ mkdir animals
+victor@Victor-PC-Ubuntu:~/GB$ mv 'Друзья человека' animals/'Друзья человека'
+
+3)
+
+victor@Victor-PC-Ubuntu:~/GB$ wget https://dev.mysql.com/get/mysql-apt-config_0.8.26-1_all.deb
+--2023-07-30 21:28:42--  https://dev.mysql.com/get/mysql-apt-config_0.8.26-1_all.deb
+Resolving dev.mysql.com (dev.mysql.com)... 23.52.29.249, 2a02:26f0:5200:3b1::2e31, 2a02:26f0:5200:38e::2e31
+Connecting to dev.mysql.com (dev.mysql.com)|23.52.29.249|:443... connected.
+HTTP request sent, awaiting response... 302 Moved Temporarily
+Location: https://repo.mysql.com//mysql-apt-config_0.8.26-1_all.deb [following]
+--2023-07-30 21:28:43--  https://repo.mysql.com//mysql-apt-config_0.8.26-1_all.deb
+Resolving repo.mysql.com (repo.mysql.com)... 23.34.232.219
+Connecting to repo.mysql.com (repo.mysql.com)|23.34.232.219|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 18088 (18K) [application/x-debian-package]
+Saving to: ‘mysql-apt-config_0.8.26-1_all.deb’
+
+mysql-apt-config_0.8.26-1_all 100%[=================================================>]  17,66K  --.-KB/s    in 0s
+
+2023-07-30 21:28:44 (60,4 MB/s) - ‘mysql-apt-config_0.8.26-1_all.deb’ saved [18088/18088]
+victor@Victor-PC-Ubuntu:~/GB$ sudo dpkg -i mysql-apt-config_0.8.26-1_all.deb
+[sudo] password for victor:
+Selecting previously unselected package mysql-apt-config.
+(Reading database ... 234645 files and directories currently installed.)
+Preparing to unpack mysql-apt-config_0.8.26-1_all.deb ...
+Unpacking mysql-apt-config (0.8.26-1) ...
+Setting up mysql-apt-config (0.8.26-1) ...
+victor@Victor-PC-Ubuntu:~/GB$ sudo apt update
+Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+Hit:2 http://by.archive.ubuntu.com/ubuntu jammy InRelease
+Get:3 http://by.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
+Get:4 http://by.archive.ubuntu.com/ubuntu jammy-backports InRelease [108 kB]
+Get:5 http://repo.mysql.com/apt/ubuntu jammy InRelease [20,3 kB]
+Get:6 http://by.archive.ubuntu.com/ubuntu jammy-updates/main amd64 DEP-11 Metadata [99,4 kB]
+Get:7 http://by.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 DEP-11 Metadata [278 kB]
+Get:8 http://by.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 DEP-11 Metadata [940 B]
+Get:9 http://by.archive.ubuntu.com/ubuntu jammy-backports/main amd64 DEP-11 Metadata [7.980 B]
+Get:10 http://by.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 DEP-11 Metadata [15,5 kB]
+Get:11 http://security.ubuntu.com/ubuntu jammy-security/main amd64 DEP-11 Metadata [41,6 kB]
+Get:12 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 DEP-11 Metadata [21,9 kB]
+Get:13 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 Sources [963 B]
+Get:14 http://repo.mysql.com/apt/ubuntu jammy/mysql-apt-config amd64 Packages [565 B]
+Get:15 http://repo.mysql.com/apt/ubuntu jammy/mysql-apt-config i386 Packages [565 B]
+Get:16 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 Packages [12,7 kB]
+Get:17 http://repo.mysql.com/apt/ubuntu jammy/mysql-tools i386 Packages [457 B]
+Get:18 http://repo.mysql.com/apt/ubuntu jammy/mysql-tools amd64 Packages [8.011 B]
+Fetched 846 kB in 6s (146 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+14 packages can be upgraded. Run 'apt list --upgradable' to see them.
+victor@Victor-PC-Ubuntu:~/GB$ sudo apt install mysql-server -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libnginx-mod-http-geoip2 libnginx-mod-http-image-filter libnginx-mod-http-xslt-filter libnginx-mod-mail
+  libnginx-mod-stream libnginx-mod-stream-geoip2 nginx-common nginx-core
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+emitting double-array: 100% |###########################################|
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+emitting matrix      : 100% |###########################################|
+
+done!
+update-alternatives: using /var/lib/mecab/dic/ipadic-utf8 to provide /var/lib/mecab/dic/debian (mecab-dictionary) in auto mode
+Setting up mysql-community-client (8.0.34-1ubuntu22.04) ...
+Setting up mysql-client (8.0.34-1ubuntu22.04) ...
+Setting up mysql-community-server (8.0.34-1ubuntu22.04) ...
+update-alternatives: using /etc/mysql/mysql.cnf to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Created symlink /etc/systemd/system/multi-user.target.wants/mysql.service → /lib/systemd/system/mysql.service.
+Setting up mysql-server (8.0.34-1ubuntu22.04) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.1) ...
+victor@Victor-PC-Ubuntu:~/GB$ mysql -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.34 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> exit
+Bye
+
+
+4)
+
+victor@Victor-PC-Ubuntu:~/GB$  wget http://archive.ubuntu.com/ubuntu/pool/universe/c/cowsay/cowsay_3.03+dfsg2-4_all.deb
+--2023-07-30 21:48:21--  http://archive.ubuntu.com/ubuntu/pool/universe/c/cowsay/cowsay_3.03+dfsg2-4_all.deb
+Resolving archive.ubuntu.com (archive.ubuntu.com)... 91.189.91.82, 185.125.190.36, 91.189.91.83, ...
+Connecting to archive.ubuntu.com (archive.ubuntu.com)|91.189.91.82|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 17684 (17K) [application/vnd.debian.binary-package]
+Saving to: ‘cowsay_3.03+dfsg2-4_all.deb’
+
+cowsay_3.03+dfsg2-4_all.deb   100%[=================================================>]  17,27K  --.-KB/s    in 0,1s
+
+2023-07-30 21:48:22 (155 KB/s) - ‘cowsay_3.03+dfsg2-4_all.deb’ saved [17684/17684]
+
+victor@Victor-PC-Ubuntu:~/GB$ sudo dpkg -i cowsay_3.03+dfsg2-4_all.deb
+[sudo] password for victor:
+Selecting previously unselected package cowsay.
+(Reading database ... 235005 files and directories currently installed.)
+Preparing to unpack cowsay_3.03+dfsg2-4_all.deb ...
+Unpacking cowsay (3.03+dfsg2-4) ...
+Setting up cowsay (3.03+dfsg2-4) ...
+Processing triggers for man-db (2.10.2-1) ...
+
+victor@Victor-PC-Ubuntu:~/GB$ cowsay Hello, World!
+ _______________
+< Hello, World! >
+ ---------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+victor@Victor-PC-Ubuntu:~/GB$ sudo dpkg -r cowsay
+(Reading database ... 235063 files and directories currently installed.)
+Removing cowsay (3.03+dfsg2-4) ...
+Processing triggers for man-db (2.10.2-1) ...
+
+5)
+victor@Victor-PC-Ubuntu:~/GB$ history
+    1  cat > 'Домашние животные'
+    2  cat > 'Вьючные животные'
+    3  cat 'Домашние животные' 'Вьючные животные' > 'Животные'
+    4  cat 'Животные'
+    5  mv 'Животные' 'Друзья человека'
+    6  mkdir animals
+    7  mv 'Друзья человека' animals/'Друзья человека'
+    8  wget https://dev.mysql.com/get/mysql-apt-config_0.8.26-1_all.deb
+    9  sudo dpkg -i mysql-apt-config_0.8.26-1_all.deb
+   10  sudo apt update
+   11  sudo apt install mysql-server -y
+   12  mysql -u root -p
+   13  sudo dpkg -i lftp_4.9.2-1build1_amd64.deb
+   14  sudo dpkg -i cowsay_3.03+dfsg2-4_all.deb
+   15  cowsay Hello, World!
+   16  sudo dpkg -r cowsay
+   17  history
